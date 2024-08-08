@@ -100,7 +100,7 @@ export default function Home() {
                 </Grid>
 
                 <Grid xs={4}>
-                  <Item>Activies</Item>
+                  <Item>Activities</Item>
                 </Grid>
                 <Grid xs={4}>
                   <Item>Food</Item>
