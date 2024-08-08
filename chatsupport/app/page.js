@@ -7,10 +7,8 @@ import { styled } from '@mui/material/styles';
 import {useState} from "react"
 
 export default function Home() {
-  
   const [messages, setMessages] = useState([
-    {role: "assistant", content: "Hi! Im your life assistant. How can I help you"},
-  
+    {role: "assistant", content: "Hi! I'm here to help you start saving for your dream vacation. Would you like to set up your first trip budget?",},
   ])
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -23,37 +21,46 @@ export default function Home() {
     color: theme.palette.text.secondary,
   }));
   
+
   const sendMessage = async () => {
-    setMessage('')
-    setMessages((messages) => [...messages, {role: "user", content: message}, {role: "assistant", content: ""}])
-    const response = fetch('/api/chat', {
+    setMessage("");
+    setMessages((messages) => [
+      ...messages,
+      { role: "user", content: message },
+      { role: "assistant", content: "" },
+    ]);
+    const response = fetch("/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify([...messages, {role: "user", content: message}]),
-    }).then(async(res) => {
-      const reader = res.body.getReader()
-      const decoder = new TextDecoder()
-      let result = ''
-      return reader.read().then(function processText({done, value}){
+      body: JSON.stringify([...messages, { role: "user", content: message }]),
+    }).then(async (res) => {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let result = "";
+      return reader.read().then(function processText({ done, value }) {
         if (done) {
-          return result
+          return result;
         }
-        const text = decoder.decode(value || new Uint8Array(), {stream: true})
+        const text = decoder.decode(value || new Uint8Array(), {
+          stream: true,
+        });
         setMessages((messages) => {
-          let lastMessage = messages[messages.length - 1]
-          let otherMessages = messages.slice(0, messages.length - 1)
+          let lastMessage = messages[messages.length - 1];
+          let otherMessages = messages.slice(0, messages.length - 1);
 
-          return [...otherMessages, {...lastMessage, content: lastMessage.content + text},]
-        })
-        return reader.read().then(processText)
-      })
-    })
-    
-  }
+          return [
+            ...otherMessages,
+            { ...lastMessage, content: lastMessage.content + text },
+          ];
+        });
+        return reader.read().then(processText);
+      });
+    });
+  };
 
-  const[message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
 
   return (
     <Box width="100vw" height="100vh" display="flex" flexDirection={"column"} overflow= "hidden">
