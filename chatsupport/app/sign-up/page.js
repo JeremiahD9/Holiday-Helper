@@ -66,7 +66,7 @@ const SignUp = () => {
           >
             <GiAirplaneDeparture />
           </IconButton>
-          <Typography variant="h4">Holiday Helper</Typography>
+          <Typography variant="h4">DreamTrip AI</Typography>
         </Toolbar>
       </AppBar>
       <ThemeProvider theme={theme}>

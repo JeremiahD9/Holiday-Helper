@@ -67,7 +67,7 @@ const SignIn = () => {
             variant="h4"
             sx={{ fontFamily: "Playwrite Australia QLD, sans-serif" }}
           >
-            Holiday Helper
+            DreamTrip AI
           </Typography>
         </Toolbar>
       </AppBar>

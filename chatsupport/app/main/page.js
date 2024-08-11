@@ -282,7 +282,7 @@ export default function Home() {
           >
             <GiAirplaneDeparture />
           </IconButton>
-          <Typography variant="h4">Holiday Helper</Typography>
+          <Typography variant="h4">DreamTrip AI</Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Button color="inherit" onClick={() => signOut(auth)}>
             Log Out
@@ -371,7 +371,8 @@ export default function Home() {
                 alignItems: "center",
               }}
             >
-              Budget: ${vacationExpenses.vacation_budget?.total_budget || "N/A"}
+              Budget: ${vacationExpenses.vacation_budget?.total_budget || "N/A"} <br/>
+              Remaining Funds: ${(vacationExpenses.vacation_budget.total_budget - moneySpent) || "N/A"}
               <ProgressBar
                 bgcolor={progressColor}
                 completed={progress}
