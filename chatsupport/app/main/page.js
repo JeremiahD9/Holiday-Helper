@@ -145,7 +145,7 @@ export default function Home() {
     ...theme.typography.body2,
     padding: theme.spacing(1),
     margin: 5,
-    height: "210px",
+    height: "100%",
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
@@ -289,8 +289,8 @@ export default function Home() {
           </Button>
         </Toolbar>
       </AppBar>
-      <Stack direction="row">
-        <Smartphone sx={{ marginLeft: 1, width: "30%" }}>
+      <Stack direction="row" sx={{height: "90%"}}>
+        <Smartphone sx={{ marginLeft: 1, width: "30%", height: "95%" }}>
           <Stack
             direction="column"
             width="100%"
@@ -354,7 +354,7 @@ export default function Home() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            height: "100%",
+            height: "95%",
             width: "70%",
             justifyContent: "center",
             alignItems: "center",
@@ -381,7 +381,7 @@ export default function Home() {
             </Stack>
             <Box width="100%" height="100%" display="flex" flexDirection="row">
               <Box width="100%" height="100%">
-                <Grid container spacing={2} rowSpacing={5}>
+                <Grid container spacing={2} rowSpacing={5} height="100%" display="flex">
                   <Grid xs={4}>
                     <Item>
                       Travel: $
