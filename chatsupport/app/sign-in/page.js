@@ -20,8 +20,8 @@ import {
   Link,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { GiAirplaneDeparture } from "react-icons/gi";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { FaPlaneDeparture } from "react-icons/fa";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -63,7 +63,7 @@ const SignIn = () => {
             aria-label="menu"
             href="/sign-up"
           >
-            <FaPlaneDeparture />
+            <GiAirplaneDeparture />
           </IconButton>
           <Typography variant="h4">Holiday Helper</Typography>
         </Toolbar>

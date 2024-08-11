@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { FaPlaneDeparture } from "react-icons/fa";
+import { GiAirplaneDeparture } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -55,8 +55,6 @@ const SignUp = () => {
       alignItems={"center"}
       display={"flex"}
       flexDirection={"column"}
-      padding={4}
-      sx={{ flexGrow: 1, width: "100%", px: 2 }}
     >
       <AppBar position="static" sx={{ marginBottom: 1 }}>
         <Toolbar>
@@ -66,7 +64,7 @@ const SignUp = () => {
             color="inherit"
             aria-label="menu"
           >
-            <FaPlaneDeparture />
+            <GiAirplaneDeparture />
           </IconButton>
           <Typography variant="h4">Holiday Helper</Typography>
         </Toolbar>
@@ -129,11 +127,6 @@ const SignUp = () => {
                 Sign Up
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
                 <Grid item>
                   <Link href="/sign-in" variant="body2">
                     {"Already have an account? Log in"}
