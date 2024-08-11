@@ -51,8 +51,6 @@ const SignIn = () => {
       alignItems={"center"}
       display={"flex"}
       flexDirection={"column"}
-      padding={4}
-      sx={{ flexGrow: 1, width: "100%", px: 2 }}
     >
       <AppBar position="static" sx={{ marginBottom: 1 }}>
         <Toolbar>
@@ -65,7 +63,12 @@ const SignIn = () => {
           >
             <GiAirplaneDeparture />
           </IconButton>
-          <Typography variant="h4">Holiday Helper</Typography>
+          <Typography
+            variant="h4"
+            sx={{ fontFamily: "Playwrite Australia QLD, sans-serif" }}
+          >
+            Holiday Helper
+          </Typography>
         </Toolbar>
       </AppBar>
       <ThemeProvider theme={theme}>
